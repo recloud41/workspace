@@ -3,10 +3,12 @@ kind: Service
 metadata:
   name: nodejs-app-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nodejs-app
   ports:
   - port: 3000
     targetPort: 3000
+    nodePort: 30080
+
 
