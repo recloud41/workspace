@@ -17,4 +17,6 @@ spec:
         image: recloud41/nodejs-app:latest
         ports:
         - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred  
 
