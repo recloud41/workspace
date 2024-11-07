@@ -20,12 +20,12 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+          echo "${DOCKER_PASSWORD}" | sudo docker login -u "${DOCKER_USERNAME}" --password-stdin
 
       - name: Build the Docker image
         run: |
-          docker build -t recloud041/nodejs-app:${{ github.sha }} .
+          sudo docker build -t recloud041/nodejs-app:${{ github.sha }} .
 
       - name: Push to Docker Hub
         run: |
-          docker push recloud041/nodejs-app:${{ github.sha }}
+          sudo docker push recloud041/nodejs-app:${{ github.sha }}
