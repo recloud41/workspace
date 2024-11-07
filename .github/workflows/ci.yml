@@ -24,8 +24,8 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          sudo docker build -t recloud041/nodejs-app:${{ github.sha }} .
+          sudo docker build -t recloud041/nodejs-app .
 
       - name: Push to Docker Hub
         run: |
-          sudo docker push recloud041/nodejs-app:${{ github.sha }}
+          sudo docker push recloud041/nodejs-app:latest
